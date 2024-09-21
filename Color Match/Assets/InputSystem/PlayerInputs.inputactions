@@ -7,22 +7,33 @@
             "actions": [
                 {
                     "name": "Moving",
-                    "type": "PassThrough",
+                    "type": "Value",
                     "id": "13f2c10b-c34e-433f-b0b3-8c72d5686858",
                     "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
                 {
                     "name": "",
                     "id": "cdfe53f1-d7b4-4ecf-8c80-d61b8cf373d4",
-                    "path": "<Touchscreen>/primaryTouch/position",
+                    "path": "<Touchscreen>/touch0/position",
                     "interactions": "",
                     "processors": "",
                     "groups": "Phone",
+                    "action": "Moving",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "84c83374-b703-435f-ad84-f688aae42cda",
+                    "path": "<Mouse>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Mouse",
                     "action": "Moving",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -34,6 +45,11 @@
         {
             "name": "Phone",
             "bindingGroup": "Phone",
+            "devices": []
+        },
+        {
+            "name": "Mouse",
+            "bindingGroup": "Mouse",
             "devices": []
         }
     ]

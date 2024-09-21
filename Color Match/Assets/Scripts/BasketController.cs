@@ -11,7 +11,7 @@ public class BasketController : MonoBehaviour
 
     private Collider2D collider;
     private SpriteRenderer spriteRenderer;
-    private PlayerInputs inputs;
+    //private PlayerInputs inputs;
 
     private void Start()
     {
