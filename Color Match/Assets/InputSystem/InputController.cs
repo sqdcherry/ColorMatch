@@ -14,14 +14,19 @@ public class InputController : MonoBehaviour
 
     private void OnEnable()
     {
-        inputs.Enable();
-        inputs.Player.Moving.performed += Moving;
+        EnableInputSystem();
+
+
+        ButtonController.OnDisableInput += DisableInputSystem;
+        ButtonController.OnEnableInput += EnableInputSystem;
     }
 
     private void OnDisable()
     {
-        inputs.Disable();
-        inputs.Player.Moving.performed -= Moving;
+        DisableInputSystem();
+
+        ButtonController.OnDisableInput -= DisableInputSystem;
+        ButtonController.OnEnableInput -= EnableInputSystem;
     }
 
     private void Moving(InputAction.CallbackContext context)
@@ -30,5 +35,16 @@ public class InputController : MonoBehaviour
         Vector3 worldCoordinates = Camera.main.ScreenToWorldPoint(screenCoordinates); 
         transform.position = new Vector3(worldCoordinates.x, transform.position.y, Camera.main.nearClipPlane);  
         worldCoordinates.z = 0;
+    }
+
+    public void EnableInputSystem()
+    {
+        inputs.Enable();
+        inputs.Player.Moving.performed += Moving;
+    }  
+    public void DisableInputSystem()
+    {
+        inputs.Disable();
+        inputs.Player.Moving.performed -= Moving;
     }
 }

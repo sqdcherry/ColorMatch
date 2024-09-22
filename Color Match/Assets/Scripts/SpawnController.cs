@@ -15,6 +15,7 @@ public class SpawnController : MonoBehaviour
         {
             int prefabIndex = Random.Range(0, figurePrefabs.Count);
             GameObject curentFigure = Instantiate<GameObject>(figurePrefabs[prefabIndex], transform.position, Quaternion.identity);
+            Destroy(curentFigure, 5f);
             spawnDelay = Time.time + _delayPerSecond;
         }
     }

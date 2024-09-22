@@ -1,18 +1,20 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using TMPro;
 
 public class BasketController : MonoBehaviour
 {
     [SerializeField] private ColorType colorType;
     [SerializeField] private float _delayPerSecond = 2f;
+    [SerializeField] private TMP_Text scoreText;
 
     private float spawnDelay = 0;
+    private int _currentScore;
 
     private Collider2D collider;
     private SpriteRenderer spriteRenderer;
-    //private PlayerInputs inputs;
-
+    
     private void Start()
     {
         collider = GetComponent<Collider2D>();
@@ -30,12 +32,11 @@ public class BasketController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {   
-        if (collision.CompareTag("Figure") && collision.GetComponent<Figure>().collorType == colorType)
-        {
-            Debug.Log("+1");
-        }
+        if (collision.CompareTag("Figure") && collision.GetComponent<Figure>().colorType == colorType) //Score update
+            _currentScore++;
         else
-            Debug.Log("-1");
+            _currentScore--;
+        scoreText.text = _currentScore.ToString();
         Destroy(collision.gameObject);
     }
 
