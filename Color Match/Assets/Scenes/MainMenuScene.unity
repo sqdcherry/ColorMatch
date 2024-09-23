@@ -838,7 +838,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxScoreText: {fileID: 1785735772}
-  scoreText: {fileID: 0}
+  scoreText: {fileID: 1785735772}
   timerText: {fileID: 0}
   levelIsEndPanel: {fileID: 0}
   levelTime: 0
