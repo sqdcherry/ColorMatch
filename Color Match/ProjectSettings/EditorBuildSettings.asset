@@ -11,6 +11,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GamePlayEasyScene.unity
     guid: 3fc8acdd13e6c734bafef6554d6fdbcd
+  - enabled: 1
+    path: Assets/Scenes/GamePlayMidleScene.unity
+    guid: 6c29e0f4ed0f97e429b89fbfcd1b5b82
+  - enabled: 1
+    path: Assets/Scenes/GamePlayHardScene.unity
+    guid: 04f09652ba1756148a22c829a52d9d52
   m_configObjects:
     com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: e47881cf4e9f0194296db5ef36db455d, type: 2}
     com.unity.input.settings: {fileID: 11400000, guid: e7608251d8c6b5d418024e31510bcc44, type: 2}

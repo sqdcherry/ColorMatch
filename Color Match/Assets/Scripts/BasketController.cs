@@ -38,7 +38,6 @@ public class BasketController : MonoBehaviour
             if (PlayerPrefs.GetInt("Score") < _currentScore)
             { 
                 PlayerPrefs.SetInt("Score", _currentScore);
-                Debug.Log(PlayerPrefs.GetInt("Score"));
             }
 
         }

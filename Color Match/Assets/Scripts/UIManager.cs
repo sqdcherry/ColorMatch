@@ -13,7 +13,6 @@ public class UIManager : MonoBehaviour
 
     public static Action OnDisableInput;
     public static Action OnEnableInput;
-    //public static Action OnUpdateScore;
 
     private int _currentScore;
 
@@ -28,20 +27,9 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    //private void UpdateScore()
-    //{
-    //    _currentScore++;
-    //    if (PlayerPrefs.GetInt("Score") < _currentScore)
-    //    {
-    //        PlayerPrefs.SetInt("Score", _currentScore);
-    //    }
-    //    else
-    //        _currentScore--;
-    //    scoreText.text = _currentScore.ToString();
-    //}
     private void Update()
     {
-        if (SceneManager.GetActiveScene().buildIndex == 1)
+        if (SceneManager.GetActiveScene().buildIndex != 0)
             Timer();
     }
 
@@ -83,8 +71,8 @@ public class UIManager : MonoBehaviour
   
     public void RestartLevelButton(GameObject pausePanel)
     {
-        pausePanel.SetActive(false);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        pausePanel.SetActive(false);
         Time.timeScale = 1;
     }
 }
