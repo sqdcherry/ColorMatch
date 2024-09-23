@@ -16,17 +16,16 @@ public class InputController : MonoBehaviour
     {
         EnableInputSystem();
 
-
-        ButtonController.OnDisableInput += DisableInputSystem;
-        ButtonController.OnEnableInput += EnableInputSystem;
+        UIManager.OnDisableInput += DisableInputSystem;
+        UIManager.OnEnableInput += EnableInputSystem;
     }
 
     private void OnDisable()
     {
         DisableInputSystem();
 
-        ButtonController.OnDisableInput -= DisableInputSystem;
-        ButtonController.OnEnableInput -= EnableInputSystem;
+        UIManager.OnDisableInput -= DisableInputSystem;
+        UIManager.OnEnableInput -= EnableInputSystem;
     }
 
     private void Moving(InputAction.CallbackContext context)

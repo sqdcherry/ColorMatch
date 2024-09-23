@@ -31,9 +31,17 @@ public class BasketController : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
-    {   
+    {
         if (collision.CompareTag("Figure") && collision.GetComponent<Figure>().colorType == colorType) //Score update
+        {
             _currentScore++;
+            if (PlayerPrefs.GetInt("Score") < _currentScore)
+            { 
+                PlayerPrefs.SetInt("Score", _currentScore);
+                Debug.Log(PlayerPrefs.GetInt("Score"));
+            }
+
+        }
         else
             _currentScore--;
         scoreText.text = _currentScore.ToString();

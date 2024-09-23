@@ -15,7 +15,6 @@ public class Figure : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
 
         SetRandomColor();
-        //Destroy(gameObject, 5f);
     }
 
     private void SetRandomColor()
